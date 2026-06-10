@@ -3,7 +3,7 @@ from tkinter import *
 
 calc = tk.Tk()
 calc.geometry("350x500")
-calc.title("分支练习计算器")
+calc.title("PR练习计算器")
 
 input_box = tk.Entry(calc, font=("Consolas", 15))
 input_box.place(x=24, y=35, height=45, width=300)
