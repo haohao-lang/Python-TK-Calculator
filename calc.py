@@ -14,6 +14,18 @@ def answer():
     input_box.delete(0, END)
     input_box.insert(END, evaluate)
 
+def percentage():
+    value = float(input_box.get())
+    result = value / 100
+    input_box.delete(0, END)
+    input_box.insert(END, result)
+    input_box.delete(0, END)
+    input_box.insert(END, result)
+    ans = str(input_box.get())
+    evaluate = eval(ans)
+    input_box.delete(0, END)
+    input_box.insert(END, evaluate)
+
 def input_num(num):
     dv = str(input_box.get())
     num = dv + str(num)
@@ -29,7 +41,7 @@ def backspace():
     input_box.insert(0, bs[0:-1])
 
 # FIRST ROW
-Button(text="%", font=("Consolas", 15), command=lambda: input_num("%")).place(x=20, y=110, height=50, width=70)
+Button(text="%", font=("Consolas", 15), command=percentage).place(x=20, y=110, height=50, width=70)
 Button(text="CE", font=("Consolas", 14),command=clear_display).place(x=100, y=110, height=50, width=70)
 Button(text="C", font=("Consolas", 14),command=clear_display).place(x=180, y=110, height=50, width=70)
 Button(text="⌫", font=("Consolas", 12),command=backspace).place(x=260, y=110, height=50, width=70)
