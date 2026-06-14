@@ -15,17 +15,15 @@ def answer():
     input_box.insert(END, evaluate)
 
 def percentage():
-    value = float(input_box.get())
-    result = value / 100
-    input_box.delete(0, END)
-    input_box.insert(END, result)
-    input_box.delete(0, END)
-    input_box.insert(END, result)
-    ans = str(input_box.get())
-    evaluate = eval(ans)
-    input_box.delete(0, END)
-    input_box.insert(END, evaluate)
-
+    try:
+        value = eval(input_box.get())
+        result = value / 100
+        input_box.delete(0, END)
+        input_box.insert(END, result)
+    except (SyntaxError, TypeError, NameError, ZeroDivisionError):
+        input_box.delete(0, END)
+        input_box.insert(END, "Error")
+        
 def input_num(num):
     dv = str(input_box.get())
     num = dv + str(num)
